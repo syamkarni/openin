@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//test1
 
 struct DashboardView: View {
     @State private var dashboardData: DashboardData?
@@ -57,13 +56,90 @@ struct DashboardView: View {
                                 .padding(.horizontal)
                         }
                         .padding()
-                        .background(Color.white) // Background for the scroll view content
-                        .cornerRadius(25) // Rounded corners for the white background
-                        .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: -5) // Shadow for the main content block
-                        .padding(.bottom, 20) // Extra padding at the bottom
+                        .background(Color.white)
+                        .cornerRadius(25)
+                        .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: -5)
+                        .padding(.bottom, 20)
                     }
-                    .background(Color.clear) // Ensure ScrollView itself has no background
-                    .frame(maxHeight: .infinity) // Make ScrollView expand to fill available space
+                    .background(Color.clear)
+                    .frame(maxHeight: .infinity)
+                }
+
+                // Custom Toolbar
+                VStack {
+                    Spacer()
+                    HStack {
+                        // Link Button (Highlighted as active)
+                        Button(action: {
+                            // Action for link button
+                        }) {
+                            VStack {
+                                Image(systemName: "link")
+                                    .font(.title2.bold()) // Make it bold to indicate active
+                                Text("Links")
+                                    .font(.caption)
+                            }
+                            .foregroundColor(.black)
+                        }
+
+                        Spacer()
+
+                        // Courses Button
+                        Button(action: {
+                            // Action for courses button
+                        }) {
+                            VStack {
+                                Image(systemName: "book.closed")
+                                Text("Courses")
+                                    .font(.caption)
+                            }
+                            .foregroundColor(.black)
+                        }
+
+                        Spacer()
+
+                        // Plus Button (Central)
+                        Button(action: {
+                            // Action for the plus button
+                        }) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 50))
+                                .foregroundColor(.blue)
+                        }
+
+                        Spacer()
+
+                        // Campaigns Button
+                        Button(action: {
+                            // Action for campaigns button
+                        }) {
+                            VStack {
+                                Image(systemName: "megaphone")
+                                Text("Campaigns")
+                                    .font(.caption)
+                            }
+                            .foregroundColor(.black)
+                        }
+
+                        Spacer()
+
+                        // Profile Button
+                        Button(action: {
+                            // Action for profile button
+                        }) {
+                            VStack {
+                                Image(systemName: "person.crop.circle")
+                                Text("Profile")
+                                    .font(.caption)
+                            }
+                            .foregroundColor(.black)
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.vertical, 15)
+                    .background(Color.white)
+                    .cornerRadius(25)
+                    .shadow(color: .gray.opacity(0.5), radius: 8, x: 0, y: 4)
                 }
             }
             .navigationBarHidden(true)
@@ -76,4 +152,8 @@ struct DashboardView: View {
     }
 }
 
-// The GreetingView, ChartView, and LinkTabsView would need to be defined with their respective designs as well.
+struct DashboardView_Previews: PreviewProvider {
+    static var previews: some View {
+        DashboardView()
+    }
+}

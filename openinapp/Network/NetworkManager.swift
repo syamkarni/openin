@@ -10,8 +10,7 @@ import Foundation
 class NetworkManager {
     static let shared = NetworkManager()
     private let baseURL = "https://api.inopenapp.com/api/v1/dashboardNew"
-    private let token = "Bearer YOUR_ACCESS_TOKEN_HERE" // Replace YOUR_ACCESS_TOKEN_HERE with your actual token
-
+    private let token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjU5MjcsImlhdCI6MTY3NDU1MDQ1MH0.dCk W0ox8t bjJA2GgUx2UEwNlbTZ7Rr38PVFJevYcXFI"
     func fetchDashboardData(completion: @escaping (DashboardData?) -> Void) {
         guard let url = URL(string: baseURL) else {
             completion(nil)
